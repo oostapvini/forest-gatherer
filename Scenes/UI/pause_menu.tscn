@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dmtngu8vxift2"]
+
+[ext_resource type="Script" uid="uid://cq8c7bxcs8iyd" path="res://Scenes/UI/pause_menu.gd" id="1_eod5q"]
+[ext_resource type="PackedScene" uid="uid://db0wmlhpy50l" path="res://Scenes/UI/settings.tscn" id="2_n4i8v"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=430290963]
+process_mode = 3
+script = ExtResource("1_eod5q")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1693432170]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.42745098)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1456702203]
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.95
+anchor_right = 0.1
+anchor_bottom = 0.95
+offset_top = -101.0
+offset_right = 96.0
+grow_vertical = 0
+
+[node name="ResumeButton" type="Button" parent="VBoxContainer" unique_id=1207487838]
+layout_mode = 2
+text = "Resume"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=586341861]
+layout_mode = 2
+text = "Settings"
+
+[node name="MainMenuButton" type="Button" parent="VBoxContainer" unique_id=1670346437]
+layout_mode = 2
+text = "Main Menu"
+
+[node name="Settings" parent="." unique_id=1120143899 instance=ExtResource("2_n4i8v")]
+visible = false
+
+[connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

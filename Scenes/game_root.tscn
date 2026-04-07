@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cl7ft8saedb18"]
 
 [ext_resource type="Script" uid="uid://d37udji441y4o" path="res://Scenes/game_root.gd" id="1_02ly6"]
+[ext_resource type="PackedScene" uid="uid://dmtngu8vxift2" path="res://Scenes/UI/pause_menu.tscn" id="2_283ij"]
 
 [node name="GameRoot" type="Node2D" unique_id=2115154946]
 process_mode = 3
@@ -9,3 +10,5 @@ start_level_path = "uid://dhc0rt0a3g6ut"
 
 [node name="LevelHolder" type="Node" parent="." unique_id=1416821944]
 process_mode = 1
+
+[node name="PauseMenu" parent="." unique_id=430290963 instance=ExtResource("2_283ij")]

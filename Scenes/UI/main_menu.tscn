@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://ddi4olwv5cjhg"]
+
+[ext_resource type="Script" uid="uid://pdej21n8s0k4" path="res://Scenes/UI/main_menu.gd" id="1_g18y6"]
+[ext_resource type="Texture2D" uid="uid://vi5gc0we436y" path="res://Resources/Backgrounds/MainMenuBackground.jpg" id="2_mjmdf"]
+[ext_resource type="PackedScene" uid="uid://db0wmlhpy50l" path="res://Scenes/UI/settings.tscn" id="3_72sra"]
+
+[node name="MainMenu" type="CanvasLayer" unique_id=201086586]
+process_mode = 3
+follow_viewport_enabled = true
+script = ExtResource("1_g18y6")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=843228951]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mjmdf")
+stretch_mode = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=968729544]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -20.0
+offset_right = 150.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=1694833325]
+layout_mode = 2
+text = "Play"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=878756319]
+layout_mode = 2
+text = "Settings"
+
+[node name="ExitButton" type="Button" parent="VBoxContainer" unique_id=816080874]
+layout_mode = 2
+text = "Exit"
+
+[node name="Settings" parent="." unique_id=1120143899 instance=ExtResource("3_72sra")]
+visible = false
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

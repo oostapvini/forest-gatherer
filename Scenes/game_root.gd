@@ -4,14 +4,25 @@ class_name GameRoot
 
 @export_file("*.tscn") var start_level_path: String
 
+@onready var pauseMenu : PauseMenu = $PauseMenu
 @onready var levelHolder = $LevelHolder
 
 var current_level: Node = null
 
 func _ready() -> void:
+	pauseMenu.hide()
 	if start_level_path != "":
 		load_level(start_level_path)
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if event.pressed and event.keycode == KEY_ESCAPE:
+			if pauseMenu.visible:
+				get_tree().paused = false
+				pauseMenu.hide()
+			else:
+				get_tree().paused = true
+				pauseMenu.show()
 			
 func load_level(level_path: String) -> void:
 	if current_level != null:

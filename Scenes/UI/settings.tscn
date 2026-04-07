@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://db0wmlhpy50l"]
+
+[ext_resource type="Script" uid="uid://sggqmfaf1840" path="res://Scenes/UI/settings.gd" id="1_mj2lg"]
+
+[node name="Settings" type="CanvasLayer" unique_id=1120143899]
+script = ExtResource("1_mj2lg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=859227432]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -20.0
+offset_right = 150.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 36
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1940394718]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "SETTINGS"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer" unique_id=520684767]
+layout_mode = 2
+theme_override_constants/h_separation = 32
+columns = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/GridContainer" unique_id=366932139]
+layout_mode = 2
+text = "Volume"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/GridContainer" unique_id=1909839443]
+layout_mode = 2
+
+[node name="VolumeSlider" type="HSlider" parent="VBoxContainer/GridContainer/HBoxContainer" unique_id=988700362]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="VolumeValueLabel" type="Label" parent="VBoxContainer/GridContainer/HBoxContainer" unique_id=692704715]
+layout_mode = 2
+text = "100%"
+
+[node name="Back" type="Button" parent="VBoxContainer" unique_id=1365405336]
+layout_mode = 2
+text = "Back"
+
+[connection signal="value_changed" from="VBoxContainer/GridContainer/HBoxContainer/VolumeSlider" to="." method="_on_value_changed"]
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]

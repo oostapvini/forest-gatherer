@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="forest-gatherer"
-run/main_scene="uid://dhc0rt0a3g6ut"
+run/main_scene="uid://ddi4olwv5cjhg"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
