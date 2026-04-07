@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ddi4olwv5cjhg"]
 
 [ext_resource type="Script" uid="uid://pdej21n8s0k4" path="res://Scenes/UI/main_menu.gd" id="1_g18y6"]
-[ext_resource type="Texture2D" uid="uid://vi5gc0we436y" path="res://Resources/Backgrounds/MainMenuBackground.jpg" id="2_mjmdf"]
+[ext_resource type="Texture2D" uid="uid://vi5gc0we436y" path="res://Resources/Backgrounds/main_menu_background.jpg" id="2_mjmdf"]
 [ext_resource type="PackedScene" uid="uid://db0wmlhpy50l" path="res://Scenes/UI/settings.tscn" id="3_72sra"]
 
 [node name="MainMenu" type="CanvasLayer" unique_id=201086586]

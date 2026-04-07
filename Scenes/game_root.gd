@@ -19,10 +19,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event.pressed and event.keycode == KEY_ESCAPE:
 			if pauseMenu.visible:
 				get_tree().paused = false
-				pauseMenu.hide()
+				pauseMenu.close()
 			else:
 				get_tree().paused = true
-				pauseMenu.show()
+				pauseMenu.open()
 			
 func load_level(level_path: String) -> void:
 	if current_level != null:
